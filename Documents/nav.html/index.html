@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox & Grid</title>
+    <style>
+        /* Basic reset */
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        /* Hide checkbox completely */
+        #menu-toggle {
+            display: none;
+        }
+
+        /* Styling the hamburger icon */
+        .hamburger {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        /* Desktop Navigation using Flexbox */
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 10px 20px;
+            background-color: #333;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+
+        /* Mobile Viewport Styles */
+        @media (max-width: 600px) {
+            .hamburger {
+                display: block; /* Show hamburger button on small screens */
+                background-color: #333;
+                color: white;
+            }
+
+            nav ul {
+                display: none; /* Hide menu links by default on mobile */
+                flex-direction: column;
+                background-color: #444;
+                padding: 15px;
+            }
+
+            /* Toggle display when hamburger menu (checkbox) is checked */
+            #menu-toggle:checked ~ ul {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">portfolio</a></li>
+            <li><a href="#">services</a></li>
+            <li><a href="#">blog</a></li>
+            <li><a href="#">contact</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
